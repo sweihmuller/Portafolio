@@ -15,6 +15,7 @@ namespace Portafolio.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Nombre = "Santiago Weihmüller";
             return View();
         }
 
