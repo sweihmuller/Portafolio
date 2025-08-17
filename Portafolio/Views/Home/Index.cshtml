@@ -1,10 +1,24 @@
 ﻿@model Persona 
 @{
     ViewData["Title"] = "Home Page";
+   
 }
 
 <div class="text-center">
-    <h1 class="display-4">Soy @Model.Nombre. (@Model.age)</h1>
+    <h1 class="display-4">Soy @Model.Nombre</h1>
     <p>Soy un desarrollador de Software especializado en .NET y Flutter.</p>
-    <img id="foto" src="~/imagenes/CVPHOTO.jpg" alt="Santiago Weihmüller" />
+    <img id="foto" src="~/imagenes/CVPHOTO.jpg" alt="@Model.Nombre" />
+</div>
+
+<div class="text-center">
+    <img id="imagen-dotnet" src="~/imagenes/dotnet.png" alt="DOTNET" />
+</div>
+
+<div class="row justify-content-center text-center bg-primary">
+    <div class="col col-md-7 seccion-bienvenida">
+        <h1>Te doy la bienvenida a mi portafolio.</h1>
+        <p>
+            Soy Técnico Superior en Desarrollo de Software con experiencia en desarrollo backend (.NET, C#), frontend (Flutter, JavaScript) y gestión de bases de datos (SQL Server, Firebase). Me apasiona crear soluciones eficientes y escalables que resuelvan problemas reales.
+        </p>
+    </div>
 </div>

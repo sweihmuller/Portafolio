@@ -18,7 +18,6 @@ namespace Portafolio.Controllers
             Persona persona = new Persona
             {
                 Nombre = "Santiago Weihmüller",
-                age = 23
             };
             return View("Index", persona);
         }
