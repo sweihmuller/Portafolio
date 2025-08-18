@@ -20,15 +20,15 @@ namespace Portafolio.Controllers
         public IActionResult Index()
         {
             var proyectos = _repositorioProyectos.ObtenerProyectos().Take(2).ToList();
-            var modelo = new HomeIndexViewModel() { proyectos = proyectos };
-            return View(modelo);
+            return View(proyectos);
         }
 
-       
 
-        public IActionResult Privacy()
+
+        public IActionResult Proyectos()
         {
-            return View();
+            var proyectos = _repositorioProyectos.ObtenerProyectos().ToList();
+            return View(proyectos);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
