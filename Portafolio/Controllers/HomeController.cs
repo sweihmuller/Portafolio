@@ -9,12 +9,13 @@ namespace Portafolio.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IRepositorioProyectos _repositorioProyectos;
+        private readonly IServicioEmailGmail _servicioEmailGmail;
 
-        public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos) 
+        public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos, IServicioEmailGmail servicioEmailGmail) 
         {
             _logger = logger;
-            _repositorioProyectos = repositorioProyectos; 
-            
+            _repositorioProyectos = repositorioProyectos;
+            _servicioEmailGmail = servicioEmailGmail;
         }
 
         public IActionResult Index()
@@ -37,8 +38,9 @@ namespace Portafolio.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contacto(ContactoViewModel contactoViewModel)
+        public async Task<IActionResult> Contacto(ContactoViewModel contactoViewModel)
         {
+            await _servicioEmailGmail.Enviar(contactoViewModel);
             return RedirectToAction("Gracias");
         }
         public IActionResult Gracias()
