@@ -31,6 +31,20 @@ namespace Portafolio.Controllers
             return View(proyectos);
         }
 
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contacto(ContactoViewModel contactoViewModel)
+        {
+            return RedirectToAction("Gracias");
+        }
+        public IActionResult Gracias()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
